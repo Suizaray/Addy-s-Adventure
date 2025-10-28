@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Addy's Adventures</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Addy's Adventures</h1>
+    <p><strong>Created by:</strong> Daniel Chen</p>
+  </header>
+
+  <section id="score-format">
+    <h2>Score File Format</h2>
+    <p>
+      The score files for <em>Addy's Adventures</em> are stored in <strong>XML</strong> format.
+      Each score file contains tags for instruments, notes, durations, and effects.
+      Below is the structure of the XML format:
+    </p>
+
+<pre><code>&lt;score bpm = "180" beatspermeasure = "4"&gt;
+  &lt;instrument instrument="AdditiveSynthesizer"&gt;
+    &lt;note measure="1" beat="1" duration="1.0" note="C4" harmonics="1.0,0.5,0.25" /&gt;
+    &lt;note measure="5" beat="1" duration="3.0" note="C4" harmonics="1.0,0.5,0.25" nextHarmonics="0.5,0.7,0.3" crossfadeDuration="3.0" /&gt;
+  &lt;/instrument&gt;
+  &lt;instrument instrument="ToneInstrument"&gt;
+    &lt;note measure="1" beat="1" duration="1.5" note="G4" /&gt;
+  &lt;/instrument&gt;
+&lt;/score&gt;
+</code></pre>
+
+    <p>
+      Each <code>&lt;instrument&gt;</code> represents an instrument line, and each
+      <code>&lt;note&gt;</code> defines an event with its musical parameters.
+    </p>
+  </section>
+
+  <section id="score-file">
+    <h2>Actual Score File</h2>
+    <p>
+      You can download the full addy score file here:
+      <a href="addy.score" download>Download Score File (XML)</a>
+    </p>
+  </section>
+
+  <section id="component">
+    <h2>Component Description — Additive Synthesizer</h2>
+    <p>
+      The <strong>Additive Synthesizer</strong> component generates sound by combining multiple
+      sine wave oscillators corresponding to harmonic overtones of a base frequency.
+      Each oscillator can have independent amplitude and phase settings, allowing rich
+      and dynamic tone creation.
+    </p>
+
+    <h3>Functionality</h3>
+    <ul>
+      <li>Generates harmonically related sine wave components</li>
+      <li>Supports adjustable harmonic amplitudes</li>
+      <li>Implements envelope shaping (ADSR)</li>
+      <li>Allows per-note parameter control through the score XML</li>
+    </ul>
+
+    <h3>Ownership</h3>
+    <p>Owned and implemented by <strong>Daniel Chen</strong>.</p>
+
+    <h3>Supported Grading Elements</h3>
+    <ul>
+      <li>Sinusoid playback on demand from the sequencer</li>
+      <li>Definition of all harmonics</li>
+      <li>Envelope generation</li>
+	<li>Polyphony</li>
+	<li>Sound cross-fading</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>© 2025 Daniel Chen — Addy's Adventures</p>
+  </footer>
+</body>
+</html>
